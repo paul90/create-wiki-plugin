@@ -1,0 +1,21 @@
+{
+  "name": "create-wiki-plugin",
+  "version": "0.0.1",
+  "description": "A template for creating Federated Wiki Plugins",
+  "type": "module",
+  "bin": {
+    "create-wiki-plugin": "./index.js"
+  },
+  "scripts": {
+    "prettier:format": "prettier --write .",
+    "prettier:check": "prettier --check ."
+  },
+  "engines": {
+    "node": "^20.0.0 || >=22.0.0"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.5.2"
+  }
+}
