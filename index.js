@@ -91,6 +91,8 @@ await replacePlaceholder(path.join(pluginDir, 'scripts', 'build-client.js'))
 await replacePlaceholder(path.join(pluginDir, 'README.md'))
 // 5. package.json
 await replacePlaceholder(path.join(pluginDir, 'package.json'))
+// 6. gitignore
+await replacePlaceholder(path.join(pluginDir, '.gitignore'))
 
 // install developer dependencies
 console.log('Installing developer dependencies')

@@ -1,4 +1,4 @@
-client/activity.*
+client/template.*
 coverage
 node_modules
 npm-debug.log
