@@ -1,0 +1,16 @@
+{
+  title:"About Template Plugin",
+  story:[
+    {type:"paragraph",text:"Describe the plugin here.",id:8683991505356701},
+    {type:"template",text:"SAMPLE Markup",id:7102077611260087}
+  ],
+  journal:[
+    {type:"create",date:1749308209939,item:{
+      title:"About Template Plugin",
+      story:[
+        {type:"paragraph",text:"Describe the plugin here.",id:8683991505356701},
+        {type:"template",text:"SAMPLE Markup",id:7102077611260087}
+      ]
+    }
+  ]
+}
