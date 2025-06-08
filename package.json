@@ -1,6 +1,6 @@
 {
   "name": "create-wiki-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A template for creating Federated Wiki Plugins",
   "type": "module",
   "bin": {
