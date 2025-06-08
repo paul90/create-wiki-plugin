@@ -11,6 +11,7 @@
     "build": "npm run clean; npm run test; node --no-warnings scripts/build-client.js",
     "about": "wiki -p 3010 -d . --security_legacy",
     "clean": "rm client/template.js client/template.js.map",
+    "clean-about": "rm -r assets commons recycle status",
     "prettier:format": "prettier --write './**/*.js'",
     "prettier:check": "prettier --check ./**/*.js",
     "test": "node --test"
