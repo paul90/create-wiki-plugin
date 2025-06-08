@@ -1,5 +1,10 @@
-client/template.*
+assets
+client/template.js
+client/template.map
+commons
 coverage
 node_modules
 npm-debug.log
 meta-client.json
+recycle
+status
