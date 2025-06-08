@@ -33,6 +33,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const currentDir = cwd()
 const pluginDir = path.resolve(currentDir, pluginRepo)
 
+const dateStamp = new Date().getTime()
+
+const randomByte = () => (((1 + Math.random()) * 0x100) | 0).toString(16).substring(1)
+const randomBytes = n => [...Array(n)].map(() => randomByte()).join('')
+const itemId = () => randomBytes(8)
+
 // does directory already exist?
 await fs
   .stat(pluginDir)
@@ -69,6 +75,7 @@ const dotFiles = ['editorconfig', 'gitignore', 'npmignore', 'prettierignore', 'p
 const replacePlaceholder = async filePath => {
   await fs
     .readFile(filePath, { encoding: 'utf8' })
+    .then(source => source.replace(/Template/g, pluginName))
     .then(source => source.replace(/template/g, pluginName.toLowerCase()))
     .then(source => fs.writeFile(filePath, source, { encoding: 'utf8' }))
     .catch(e => {
@@ -93,6 +100,21 @@ await replacePlaceholder(path.join(pluginDir, 'README.md'))
 await replacePlaceholder(path.join(pluginDir, 'package.json'))
 // 6. gitignore
 await replacePlaceholder(path.join(pluginDir, '.gitignore'))
+// 7. about plugin package
+const aboutPage = path.join(pluginDir, 'pages', 'about-template-plugin')
+// first replace placeholders that are unique to the about page
+await fs
+  .readFile(aboutPage, { encoding: 'utf8' })
+  .then(source => source.replace(/created/g, dateStamp))
+  .then(source => source.replace(/id1/g, itemId()))
+  .then(source => source.replace(/id2/g, itemId()))
+  .then(source => fs.writeFile(aboutPage, source, { encoding: 'utf8' }))
+  .catch(e => {
+    console.error(e.message)
+    exit(1)
+  })
+await replacePlaceholder(aboutPage)
+await fs.rename(aboutPage, path.join(pluginDir, 'pages', `about-${pluginName.toLowerCase()}-plugin`))
 
 // install developer dependencies
 console.log('Installing developer dependencies')
