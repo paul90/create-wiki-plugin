@@ -1,4 +1,4 @@
-# Federated Wiki - template Plugin
+# Federated Wiki - Template Plugin
 
 TODO: Add decription about what this plugin does.
 

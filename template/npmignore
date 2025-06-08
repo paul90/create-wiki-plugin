@@ -8,3 +8,7 @@ eslint.config.js
 .prettier*
 .vscode
 .zed
+assets
+commons
+recycle
+status

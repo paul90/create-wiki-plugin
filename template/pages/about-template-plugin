@@ -1,0 +1,20 @@
+{
+  "title": "About Template Plugin",
+  "story": [
+    { "type": "paragraph", "id": "id1", "text": "Describe the plugin here." },
+    { "type": "template", "id": "id2", "text": "SAMPLE Markup" }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "About Template Plugin",
+        "story": [
+          { "type": "paragraph", "id": "id1", "text": "Describe the plugin here." },
+          { "type": "template", "id": "id2" , "text":"SAMPLE Markup" }
+        ]
+      },
+      "date": created
+    }
+  ]
+}
